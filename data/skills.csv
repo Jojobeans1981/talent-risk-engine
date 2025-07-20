@@ -1,10 +1,10 @@
 skill,category,level,demand,rarity
 JavaScript,Programming,Intermediate,High,Low
+Python,Programming,Advanced,Very High,Low
 React,Frontend,Intermediate,High,Medium
 Node.js,Backend,Intermediate,High,Medium
 AWS,Cloud,Advanced,Very High,Medium
 Docker,DevOps,Intermediate,High,Medium
-Python,Programming,Advanced,Very High,Low
 Machine Learning,Data Science,Advanced,Very High,High
 SQL,Database,Intermediate,High,Low
 Tableau,Analytics,Intermediate,Medium,Medium
@@ -13,7 +13,3 @@ Product Strategy,Management,Advanced,High,High
 Agile,Methodology,Intermediate,High,Low
 Analytics,Data Science,Intermediate,High,Medium
 Leadership,Management,Advanced,Very High,High
-TypeScript,Programming,Intermediate,High,Medium
-CSS,Frontend,Intermediate,Medium,Low
-UI/UX,Design,Intermediate,High,Medium
-Excel,Analytics,Basic,Medium,Low

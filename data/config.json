@@ -5,25 +5,18 @@
       "medium": 0.6,
       "high": 0.8
     },
-    "skillVulnerability": {
+    "vulnerability": {
       "low": 0.25,
       "medium": 0.5,
       "high": 0.75
     }
   },
   "weights": {
-    "performance": 0.3,
-    "engagement": 0.25,
     "tenure": 0.2,
-    "salary": 0.15,
+    "performance": 0.25,
+    "salary": 0.2,
+    "engagement": 0.15,
+    "promotion": 0.1,
     "manager": 0.1
-  },
-  "skillCategories": {
-    "Programming": ["JavaScript", "Python", "TypeScript", "Java", "C++"],
-    "Frontend": ["React", "Vue", "Angular", "CSS", "HTML"],
-    "Backend": ["Node.js", "Django", "Spring", "Express"],
-    "Cloud": ["AWS", "Azure", "GCP", "Docker", "Kubernetes"],
-    "Data Science": ["Machine Learning", "Statistics", "R", "Pandas"],
-    "Management": ["Leadership", "Product Strategy", "Team Management"]
   }
 }
