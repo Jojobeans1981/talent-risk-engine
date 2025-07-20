@@ -1,0 +1,14 @@
+{
+  "AI Prompt Engineering": {
+    "relatedSkills": ["python", "data analysis", "machine learning"],
+    "marketDemand": 95,
+    "growthRate": 150,
+    "category": "technical"
+  },
+  "Cloud Security Architecture": {
+    "relatedSkills": ["cloud architecture", "aws", "cybersecurity"],
+    "marketDemand": 90,
+    "growthRate": 120,
+    "category": "technical"
+  }
+}

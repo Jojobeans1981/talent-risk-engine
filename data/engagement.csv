@@ -1,0 +1,6 @@
+employeeId,survey_date,engagement_score,satisfaction,work_life_balance,career_development
+EMP001,2023-12-01,3.8,4.0,3.5,3.9
+EMP002,2023-12-01,3.2,3.0,3.8,3.0
+EMP003,2023-12-01,4.2,4.5,4.0,4.1
+EMP004,2023-12-01,4.1,4.2,4.0,4.0
+EMP005,2023-12-01,3.5,3.8,3.2,3.6

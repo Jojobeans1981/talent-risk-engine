@@ -1,47 +1,106 @@
 {
-  "name": "prometheus-talent-risk",
-  "version": "0..0",
-  "description": "",
-  "main": "index.js",
+  "name": "talent-risk-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "HR talent management and risk assessment engine with skills analysis, flight risk prediction, and talent retention insights",
+  "main": "src/index.js",
   "scripts": {
-    "fix-data": "node fix-data.js",
-    "generate-pdf": "node src/utils/pdf-generator",
-    "generate-report": "node src/utils/report-generator",
-    "generate-skill-report": "node src/utils/skill-report-generator",
-    "generate-hr-data": "node src/utils/hr-data-generator",
-    "generate-hr-report": "node src/utils/hr-report-generator",
-    "generate-hr-skill-report": "node src/utils/hr-skill-report-generator",
-    "generate-hr-skill-report-pdf": "node src/utils/hr-skill-report-pdf-generator",
-    "generate-hr-skill-report-csv": "node src/utils/hr-skill-report-csv-generator",
-    "generate-hr-skill-report-json": "node src/utils/hr-skill-report-json-generator",
-    "generate-hr-skill-report-html": "node src/utils/hr-skill-report-html-generator",
-    "generate-hr-skill-report-markdown": "node src/utils/hr-skill-report-markdown-generator",
-    "generate-hr-skill-report-excel": "node src/utils/hr-skill-report-excel-generator",
-    "generate-hr-skill-report-pptx": "node src/utils/hr-skill-report-pptx-generator",
-    "generate-data": "node src/utils/data-generator",
-    "start-day": "node src/phases/day$",
-    "test": "jest",
-    "validate-data": "node src/utils/data-validator",
-    "pdfkit": "^0.13.0"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "skills:extract": "node src/phases/day2-skills-extraction.js",
+    "analyze:skills": "node src/analyzers/skills-analyzer.js",
+    "analyze:risk": "node src/analyzers/risk-analyzer.js",
+    "dashboard": "node src/dashboard/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": [
+    "hr",
+    "talent-management",
+    "risk-assessment",
+    "skills-analysis",
+    "employee-analytics",
+    "workforce-planning",
+    "talent-retention"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
+    "@jest/globals": "^30.0.4",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
     "csv-writer": "^1.6.0",
-    "csvtojson": "^2.0.10",
-    "faker": "^5.5.3"
+    "depcheck": "^1.4.7",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "joi": "^17.9.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "react-testing-library": "^8.0.1",
+    "uuid": "^9.0.1",
+    "winston": "^3.10.0"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
-    "pdfkit": "^0.13.0"
+    "@babel/preset-env": "^7.28.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.3",
+    "eslint": "^8.45.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-jest": "^27.2.3",
+    "jest": "^29.6.2",
+    "jest-mock-now": "^1.2.1",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prometheus-talent/talent-risk.git"   
+  "jest": {
+    "preset": "default",
+    "extensionsToTreatAsEsm": [
+      ".js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(chai)/)"
+    ],
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/tests"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "^@api$": "<rootDir>/src/api/index.js",
+      "^@utils/(.*)$": "<rootDir>/src/utils/$1.js",
+      "^@normalizers/(.*)$": "<rootDir>/src/normalizers/$1.js",
+      "^@data/(.*)$": "<rootDir>/src/data/$1.js"
+    },
+    "fakeTimers": {
+      "enableGlobally": true
+    },
+    "testTimeout": 15000
   }
 }
