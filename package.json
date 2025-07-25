@@ -1,47 +1,68 @@
 {
-  "name": "prometheus-talent-risk",
-  "version": "0..0",
-  "description": "",
+  "name": "talent-risk-assessment",
+  "version": "1.0.0",
+  "description": "Comprehensive talent risk assessment system for identifying flight risk, skill gaps, and organizational vulnerabilities",
   "main": "index.js",
   "scripts": {
-    "fix-data": "node fix-data.js",
-    "generate-pdf": "node src/utils/pdf-generator",
-    "generate-report": "node src/utils/report-generator",
-    "generate-skill-report": "node src/utils/skill-report-generator",
-    "generate-hr-data": "node src/utils/hr-data-generator",
-    "generate-hr-report": "node src/utils/hr-report-generator",
-    "generate-hr-skill-report": "node src/utils/hr-skill-report-generator",
-    "generate-hr-skill-report-pdf": "node src/utils/hr-skill-report-pdf-generator",
-    "generate-hr-skill-report-csv": "node src/utils/hr-skill-report-csv-generator",
-    "generate-hr-skill-report-json": "node src/utils/hr-skill-report-json-generator",
-    "generate-hr-skill-report-html": "node src/utils/hr-skill-report-html-generator",
-    "generate-hr-skill-report-markdown": "node src/utils/hr-skill-report-markdown-generator",
-    "generate-hr-skill-report-excel": "node src/utils/hr-skill-report-excel-generator",
-    "generate-hr-skill-report-pptx": "node src/utils/hr-skill-report-pptx-generator",
-    "generate-data": "node src/utils/data-generator",
-    "start-day": "node src/phases/day$",
     "test": "jest",
-    "validate-data": "node src/utils/data-validator",
-    "pdfkit": "^0.13.0"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "talent",
+    "risk",
+    "assessment",
+    "hr",
+    "analytics",
+    "skills",
+    "vulnerability"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
-    "csv-writer": "^1.6.0",
-    "csvtojson": "^2.0.10",
-    "faker": "^5.5.3"
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
-    "pdfkit": "^0.13.0"
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prometheus-talent/talent-risk.git"   
+    "url": "git+https://github.com/prometheus-talent/talent-risk.git"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["./tests/setup.js"],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!your-module-name)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   }
 }
