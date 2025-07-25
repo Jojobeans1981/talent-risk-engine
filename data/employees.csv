@@ -1,0 +1,4 @@
+id,name,email,department,role,startDate,salary,performanceRating,engagementScore,managerRating,skills
+EMP001,John Smith,john.smith@company.com,Engineering,Senior Software Engineer,2021-03-15,95000,4.2,3.8,4.1,"JavaScript,React,Node.js,AWS,Docker"
+EMP002,Sarah Johnson,sarah.johnson@company.com,Data Science,Data Scientist,2020-08-10,85000,4.5,3.2,3.8,"Python,Machine Learning,SQL,Tableau,Statistics"
+EMP003,Mike Wilson,mike.wilson@company.com,Product,Product Manager,2019-01-20,110000,3.8,4.2,4.0,"Product Strategy,Agile,Analytics,Leadership"
